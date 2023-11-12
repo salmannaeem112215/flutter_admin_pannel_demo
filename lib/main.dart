@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/comments/comment_title.dart';
 import 'package:flutter_application_1/profile/user_pic.dart';
+import 'package:flutter_application_1/profile/user_posts_section.dart';
+import 'package:flutter_application_1/profile/user_updates_section.dart';
 
 import 'headers.dart';
 
@@ -20,16 +23,25 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         backgroundColor: Colors.blue.shade100,
-        body: Container(
-            // width: 300,
-            color: Colors.white,
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              // crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Expanded(child: UserServiceSection()),
-              ],
-            )),
+        body: Center(
+          child: Container(
+              width: 300,
+              color: Colors.white,
+              child: Column(
+                mainAxisSize: MainAxisSize.min,
+                // crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  // Expanded(child: UserServiceSection()),
+                  // Expanded(child: UserPostSection()),
+                  // Expanded(child: UserUpdateSection()),
+                  CommentTile(
+                    onDelete: kDelayTime,
+                    username: 'user8',
+                    text: 'Hi Hello Nimasteahcfsd fhsjkafh sjkafh wjklfhsd ',
+                  )
+                ],
+              )),
+        ),
       ),
     );
   }

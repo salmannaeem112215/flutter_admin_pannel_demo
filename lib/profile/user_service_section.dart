@@ -8,15 +8,15 @@ class UserServiceSection extends StatelessWidget {
   Widget build(BuildContext context) {
     final List<List<dynamic>> items = [
       ['username1', 'serviceCaption1'],
-      ['username2', 'serviceCaption2'],
-      ['username3', 'serviceCaption3'],
-      ['username4', 'serviceCaption4'],
-      ['username5', 'serviceCaption5'],
-      ['username6', 'serviceCaption6'],
-      ['username7', 'serviceCaption7'],
-      ['username8', 'serviceCaption8'],
-      ['username9', 'serviceCaption9'],
-      ['username10', 'serviceCaption10'],
+      ['username1', 'serviceCaption2'],
+      ['username1', 'serviceCaption3'],
+      ['username1', 'serviceCaption4'],
+      ['username1', 'serviceCaption5'],
+      ['username1', 'serviceCaption6'],
+      ['username1', 'serviceCaption7'],
+      ['username1', 'serviceCaption8'],
+      ['username1', 'serviceCaption9'],
+      ['username1', 'serviceCaption10'],
     ];
 
     return SingleChildScrollView(

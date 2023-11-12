@@ -1,34 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/main.dart';
 import 'package:flutter_application_1/profile/user_pic.dart';
 import 'package:flutter_application_1/shared/my_asyn_button.dart';
 
-class UserTile extends StatelessWidget {
-  const UserTile({
-    super.key,
-    required this.url,
-    required this.name,
-    required this.onTap,
-    this.onDelete,
-  });
-
-  final String url;
-  final String name;
-  final Function()? onTap;
+class CommentTile extends StatelessWidget {
+  const CommentTile(
+      {super.key, required this.username, required this.text, this.onDelete});
+  final String username;
+  final String text;
   final Future<MyErrorMessage?> Function()? onDelete;
 
+  String get url => kUserPic;
   @override
   Widget build(BuildContext context) {
     return MyAsynButtonWidget(
         onTap: onDelete,
         child: (isDisable, isLoading, onAsynTap) {
-          print(
-              "Is Disable $isDisable , isLoading $isLoading onAsyncTap $onAsynTap");
           return ListTile(
             tileColor: Colors.white,
             enabled: !isDisable,
-            title: Text(name),
+            title: Text(username),
+            subtitle: Text(text),
             leading: UserPic(url: url),
-            onTap: onTap,
+            onTap: onAsynTap,
             trailing: !isLoading
                 ? GestureDetector(
                     onTap: onDelete == null ? null : onAsynTap,

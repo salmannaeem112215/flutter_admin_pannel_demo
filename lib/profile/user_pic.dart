@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/shared/my_network_image.dart';
 
 class UserPic extends StatelessWidget {
   const UserPic({super.key, required this.url, this.size});
@@ -15,16 +16,15 @@ class UserPic extends StatelessWidget {
       child: CircleAvatar(
         backgroundColor: Colors.grey.shade200,
         child: Container(
-          clipBehavior: Clip.antiAliasWithSaveLayer,
-          decoration: const BoxDecoration(shape: BoxShape.circle),
-          child: Image.network(
-            url,
-            errorBuilder: (context, error, stackTrace) => Icon(
-              Icons.person,
-              color: Colors.grey.shade800,
-            ),
-          ),
-        ),
+            clipBehavior: Clip.antiAliasWithSaveLayer,
+            decoration: const BoxDecoration(shape: BoxShape.circle),
+            child: MyNetworkImage(
+              url: url,
+              errorWidget: Icon(
+                Icons.person,
+                color: Colors.grey.shade800,
+              ),
+            )),
       ),
     );
   }
