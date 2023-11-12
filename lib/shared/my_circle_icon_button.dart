@@ -14,18 +14,19 @@ class MyCircleIconButton extends StatelessWidget {
     this.width,
     this.message,
   });
-  const MyCircleIconButton.small({
-    super.key,
-    this.onTap,
-    required this.icon,
-    this.backgroundColor = Colors.teal,
-    this.foregroundColor = Colors.white70,
-    this.message,
-  })  : size = 10.0,
+  const MyCircleIconButton.small(
+      {super.key,
+      this.onTap,
+      required this.icon,
+      this.backgroundColor = Colors.teal,
+      this.foregroundColor = Colors.white70,
+      this.message,
+      double factor = 1})
+      : size = 10.0 * factor,
         elevation = 8,
-        radius = 30,
-        height = 25,
-        width = 25;
+        radius = 30 * factor,
+        height = 25 * factor,
+        width = 25 * factor;
   final Function()? onTap;
   final IconData icon;
   final double elevation;
@@ -43,7 +44,7 @@ class MyCircleIconButton extends StatelessWidget {
       height: height,
       width: width,
       child: Tooltip(
-        message: message == null ? 'Delete' : 'Delete $message',
+        message: message ?? 'Remove',
         child: InkWell(
           borderRadius: BorderRadius.circular(radius),
           onTap: onTap,

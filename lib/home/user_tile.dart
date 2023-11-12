@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/profile/user_pic.dart';
 import 'package:flutter_application_1/shared/my_asyn_button.dart';
-import 'package:flutter_application_1/shared/remove_widget.dart';
 
 class UserTile extends StatefulWidget {
   const UserTile({
@@ -37,20 +37,7 @@ class _UserTileState extends State<UserTile> {
             tileColor: Colors.white,
             enabled: !isDisable,
             title: Text(widget.name),
-            leading: CircleAvatar(
-              backgroundColor: Colors.grey.shade200,
-              child: Container(
-                clipBehavior: Clip.antiAliasWithSaveLayer,
-                decoration: const BoxDecoration(shape: BoxShape.circle),
-                child: Image.network(
-                  widget.url,
-                  errorBuilder: (context, error, stackTrace) => Icon(
-                    Icons.person,
-                    color: Colors.grey.shade800,
-                  ),
-                ),
-              ),
-            ),
+            leading: UserPic(url: widget.url),
             onTap: widget.onTap,
             trailing: !isLoading
                 ? GestureDetector(
